@@ -54,7 +54,7 @@ def fibonacci(index) -> int:
 # print(fibonacci(5))  # == 3
 
 
-def fibonacci2(index) -> int:
+def fibonacci_recursive(index) -> int:
     """
     0 1
     0 1 1 2 3 5 8 12
@@ -68,20 +68,20 @@ def fibonacci2(index) -> int:
     elif index == 1:
         return 1
     else:
-        return fibonacci2(index - 1) + fibonacci2(index - 2)
+        return fibonacci_recursive(index - 1) + fibonacci_recursive(index - 2)
         # Quand l'index vaut 2
-        # fibonaci2(2 - 1) + fibonacci2(2 - 2)
-        # fibonaci2(1) + fibonacci2(0)
+        # fibonacci_recursive(2 - 1) + fibonacci_recursive(2 - 2)
+        # fibonacci_recursive(1) + fibonacci_recursive(0)
         # 1            + 0
         # 1
 
         # Quand l'index vaut 3
-        # fibonaci2(3 - 1) + fibonacci2(3 - 2)
-        # fibonaci2(2) + fibonacci2(1)
+        # fibonacci_recursive(3 - 1) + fibonacci_recursive(3 - 2)
+        # fibonacci_recursive(2) + fibonacci_recursive(1)
         # 1            + 1
         # 2
 
 
-print(fibonacci2(5 - 1))  # == 3 # == fibonacci2(4) + fibonacci2(3)
+print(fibonacci_recursive(5 - 1))  # == 3 # == fibonacci_recursive(4) + fibonacci_recursive(3)
 # [1, 2, 3, 4]
 #  0  1  2  3 == numéro de la case - 1
